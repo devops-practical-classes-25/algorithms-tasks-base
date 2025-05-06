@@ -46,8 +46,8 @@ class Heap:
         """
         try:
             if self.heap_type == HeapType.MIN:
-                return parent > child
-            return parent < child
+                return parent < child # Ошибка: сравнение в обратную сторону
+            return parent < child 
         except TypeError:
             raise TypeError(
                 ERR_INCOMPARABLE_EMBEDDED_TYPES.format(type(child).__name__, type(parent).__name__)
